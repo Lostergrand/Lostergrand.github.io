@@ -3,7 +3,7 @@ const score = document.getElementById("score");
 let clickCounter = 0;
 let touchDevise = false;
 let canClick = true;
-const clickDelay = 127;
+const clickDelay = 50;
 
 function handleMouseDown(){
     if(!touchDevise && canClick){
