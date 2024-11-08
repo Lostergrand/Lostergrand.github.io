@@ -3,10 +3,10 @@ const score = document.getElementById("score");
 let clickCounter = 0;
 let touchDevise = false;
 let canClick = true;
-const clickDelay = 50;
+const clickDelay = 100;
 
 function handleMouseDown(){
-    if(!touchDevise && canClick){
+    if(!touchDevise){
         button.classList.add("active");
         incrementScore();
     }
@@ -21,25 +21,20 @@ function handleMouseUp(){
 
 function touchDown(){
     touchDevise = true;
-    if(canClick){
-        button.classList.add("active");
-    }
+    button.classList.add("active");
 }
 
 function touchUp(){
-    if(canClick){
-        button.classList.remove("active");
-        incrementScore();
-    }
+    button.classList.remove("active");
+    incrementScore();
 }
 
 function incrementScore(){
-    clickCounter++;
+    
     score.textContent= clickCounter;
-    canClick = false;
 
     setTimeout(() => {
-        canClick = true;
+        clickCounter++;
     }, clickDelay);
 }
 
