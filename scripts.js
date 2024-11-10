@@ -20,9 +20,10 @@ button.addEventListener("click", function(event){
     setTimeout(() => {
         effect.remove();
     }, 300)
-
+    
     addScore();
-});
+}
+
 
 function addScore(){
     if(canClick){
