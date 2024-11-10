@@ -4,7 +4,16 @@ const originalHeight = 932;
 const currentWidthPageSize = document.documentElement.clientWidth;
 const currentHeightPageSize = document.documentElement.clientHeight;
 
-const scaleFactor = ((currentWidthPageSize / originalWidth) + (currentHeightPageSize / originalHeight)) / 2;
+const isPortreit = currentWidthPageSize >= currentHeightPageSize || (currentHeightPageSize - currentWidthPageSize) <= 190 || (currentHeightPageSize - currentWidthPageSize) >=560;
+
+let scaleFactor;
+if(isPortreit){
+    scaleFactor = Math.min((currentHeightPageSize / originalHeight),(currentWidthPageSize / originalWidth));
+}else{
+    scaleFactor = ((currentWidthPageSize / originalWidth) + (currentHeightPageSize / originalHeight)) / 2;
+}
+
+
 
 function scaleElement(elementId, { width = false, height = false, fontSize = false }) {
     const element = document.getElementById(elementId);
