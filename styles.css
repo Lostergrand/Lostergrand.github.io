@@ -10,7 +10,13 @@
     font-size: 2rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: rgb(255, 0, 0);
+
+    transform: translateY(0);
+    transition: left 0.6s ease, top 0.6s ease, opacity 0.6s ease;
+    pointer-events: none;
 }
+
+
 
 .container{
     width: 100%;
@@ -54,6 +60,21 @@
 
 .score{
     font-size: 5rem;
+}
+.scale-up {
+    animation: scaleAnimation 0.3s ease;
+}
+
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.25); /* Увеличение в полтора раза */
+    }
+    100% {
+        transform: scale(1.5); /* Возврат к обычному размеру */
+    }
 }
 
 .button{
